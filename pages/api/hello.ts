@@ -17,7 +17,7 @@ export default function manejador(req: NextApiRequest, res: NextApiResponse) {
       break;
 
       case "DELETE":
-        const id = parseInt(req.query.id as string, 10);
+        const id = parseInt(req.query.id as string);
         const film = films.find((film) => film.id === id);
       
         if (!film) {

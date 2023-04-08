@@ -10,7 +10,7 @@ export default function HeaderLanding() {
             animation: "gradient-fade 1s ease-in-out infinite",
           }}
           className="text-8xl p-1 pb-4 pt-3  z-50 font-bold bg-gradient-to-r from-orange-500 to-red-500 text-transparent bg-clip-text">
-            Typing the Cinema
+            Typed Next Cinema
         </h1>
       </div>
       <div className='scale-y-75'>

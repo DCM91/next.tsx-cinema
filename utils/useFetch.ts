@@ -1,5 +1,5 @@
+import { Movie } from "@/next-env";
 import { useState, useEffect } from "react";
-// import { Movie } from "../react-app-env";
 
 export const useFetch = (url: string,) => {
   const [data, setData] = useState<Movie[] | any>([]);

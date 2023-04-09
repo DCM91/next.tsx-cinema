@@ -1,4 +1,4 @@
-import { Movie } from "@/next-env";
+import { Movie } from "@/typesApp";
 import { useState } from "react";
 
 

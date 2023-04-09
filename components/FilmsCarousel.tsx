@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useFetch } from '../utils/useFetch';
 import { MdFavorite } from "react-icons/md";
-import { Movie } from '@/next-env';
+import { Movie } from "@/typesApp";
+import Link from 'next/link';
 
 export default function LandingCarousel() {
   const { data, loading, error } = useFetch('http://localhost:3000/api/all',);
@@ -65,22 +66,24 @@ export default function LandingCarousel() {
       </div>
       <div className="carousel w-full">
         <div id={`slide${slide}`} className="carousel-item relative w-full">
-          <div className="carousel carousel-center rounded-t-lg">
-            {films.map((film: Movie) => (
+          <Link href="/films">
+            <div className="carousel carousel-center rounded-t-lg">
+              {films.map((film: Movie) => (
+                  
+                <div key={film.id} className="text-white font-medium ">
+                  <img
+                    src={film.image1}
+                    alt="Film"
+                    style={{ width: '15rem', height: '20rem' }}
+                  />
+                  <h3>{film.name}</h3>
+                  <p>Año: {film.year}</p>
                 
-              <div key={film.id} className="text-white font-medium ">
-                <img
-                  src={film.image1}
-                  alt="Film"
-                  style={{ width: '15rem', height: '20rem' }}
-                />
-                <h3>{film.name}</h3>
-                <p>Año: {film.year}</p>
-              
-                {film.type === "film" ? <p>Película</p>: <p>Serie</p> }
-              </div>
-            ))}
-          </div>
+                  {film.type === "film" ? <p>Película</p>: <p>Serie</p> }
+                </div>
+              ))}
+            </div>
+          </Link>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <button
               className="btn btn-circle"

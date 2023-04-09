@@ -11,6 +11,7 @@ export default function manejador(req: NextApiRequest, res: NextApiResponse) {
     case "GET":
       if (id === "all"){
       res.status(200).json({allFilms: films});
+      return;
       } if (index !== -1) {
         res.status(200).send(films[index]);
       } else {
@@ -29,7 +30,7 @@ export default function manejador(req: NextApiRequest, res: NextApiResponse) {
     };
       break;
     case "PATCH":
-      if (!index) {
+      if (index === -1) {
         return res.status(404).send("Not found");
       } else {
         films[index] = {

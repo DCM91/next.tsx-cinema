@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { useFetch } from "../utils/useFetch";
-import { Movie } from '@/next-env';
+import { Movie } from "@/typesApp";
 import { RiFilmFill } from "react-icons/ri";
 import { MdFavorite } from "react-icons/md";
 

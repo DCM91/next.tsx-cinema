@@ -66,24 +66,22 @@ export default function LandingCarousel() {
       </div>
       <div className="carousel w-full">
         <div id={`slide${slide}`} className="carousel-item relative w-full">
-          <Link href="/films">
             <div className="carousel carousel-center rounded-t-lg">
               {films.map((film: Movie) => (
-                  
-                <div key={film.id} className="text-white font-medium ">
-                  <img
-                    src={film.image1}
-                    alt="Film"
-                    style={{ width: '15rem', height: '20rem' }}
-                  />
-                  <h3>{film.name}</h3>
-                  <p>Año: {film.year}</p>
-                
-                  {film.type === "film" ? <p>Película</p>: <p>Serie</p> }
-                </div>
+                <Link href={`/films/${film.id}`}>
+                  <div key={film.id} className="text-white font-medium ">
+                    <img
+                      src={film.image1}
+                      alt="Film"
+                      style={{ width: '15rem', height: '20rem' }}
+                    />
+                    <h3>{film.name}</h3>
+                    <p>Año: {film.year}</p>
+                    {film.type === "film" ? <p>Película</p>: <p>Serie</p> }
+                  </div>
+                </Link>
               ))}
             </div>
-          </Link>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <button
               className="btn btn-circle"

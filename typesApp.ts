@@ -1,3 +1,5 @@
+import { type } from "os";
+
 export interface Movie {
     type: "film" | "serie";
     id: number;
@@ -8,3 +10,4 @@ export interface Movie {
     description: string;
     favorite: boolean;
   }
+  export type title = string;

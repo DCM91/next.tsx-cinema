@@ -1,12 +1,18 @@
 import Head from 'next/head';
-import React from 'react'
+import {ReactNode} from 'react'
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 
-export const Footer = ({children }) => {
+interface LayoutProps {
+  children: ReactNode;
+  title?: string
+}
+
+
+export const Footer = ({title = "TypedNextCinema" , children}: LayoutProps) => {
   return (
     <>
       <Head>
-        <title>TypedNextCinema</title>
+        <title>{title}</title>
         <meta name="description" content="TypedNextCinema app" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

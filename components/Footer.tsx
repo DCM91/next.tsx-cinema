@@ -19,20 +19,23 @@ export const Footer = ({title = "TypedNextCinema" , children}: LayoutProps) => {
       </Head>
 
       <header>
-      <div className="inset-0 container m-2">
+      <div className="inset-0 container m-2 mt-0 mb-o">
         <h1 
           style={{
             textAlign: "center",
             animation: "gradient-fade 1s ease-in-out infinite",
           }}
-          className="text-8xl p-1 pb-4 pt-3  z-50 font-bold bg-gradient-to-r from-orange-500 to-red-500 text-transparent bg-clip-text">
+          className="text-7xl p-1 pb-4 pt-3  z-50 font-bold bg-gradient-to-r from-orange-500 to-red-500 text-transparent bg-clip-text">
             Typed Next Cinema
         </h1>
       </div>
       </header>
+
       <main>{children}</main>
-      <footer className="footer p-10 bg-neutral text-neutral-content" style={{background: "black"}}>
-          <div style={{position: 'relative', paddingTop: " ", fontSize:"large"}}>
+
+
+      <footer className="footer p-8 py-5  bg-neutral text-neutral-content" style={{background: "black"}}>
+          <div style={{position: 'relative', fontSize:"large"}}>
               <p><br/>El código de esta aplicación está disponible, lo que significa que puedes copiar y manipular el código libremente.<br/> <br/> Agradecería  una mención si utilizas este código</p>
           </div> 
           <div>

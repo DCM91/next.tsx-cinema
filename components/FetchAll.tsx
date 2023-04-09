@@ -4,6 +4,7 @@ import { useFetch } from "../utils/useFetch";
 import { Movie } from "@/typesApp";
 import { RiFilmFill } from "react-icons/ri";
 import { MdFavorite } from "react-icons/md";
+import Link from "next/link";
 
 // import AddFilm from "./AddFilm";
 
@@ -63,7 +64,9 @@ export default function Films() {
               <div className="badge badge-error p-1 text-black font-bold">año {film.year}</div> 
             </div>
             <div className="grid w-100 mt-8 place-content-end pr-3 ">
-              <a role="button" className="btn text-2xl text-black font-extrabold bg-yellow-400 transition duration-500 hover:bg-yellow-600 ">+ INFO</a>
+            <Link href={`/films/${film.id}`}>
+              <button className="btn text-2xl text-black font-extrabold bg-yellow-400 transition duration-500 hover:bg-yellow-600 ">+ INFO</button>
+            </Link>
             </div>
             <div className="grid w-full place-content-end p-2">
             {film.favorite ? <button className="mt-16 mr-2 content-end badge bg-red-700 hover:scale-125"><MdFavorite/></button > : <button  className="mt-16 mr-2 content-end badge hover:scale-125"><MdFavorite/></button >}

@@ -5,8 +5,7 @@ import { Movie } from "@/typesApp";
 import { RiFilmFill } from "react-icons/ri";
 import { MdFavorite } from "react-icons/md";
 import Link from "next/link";
-
-// import AddFilm from "./AddFilm";
+import AddFilm from "./AddFilm";
 
 
 
@@ -24,11 +23,11 @@ export default function Films() {
  
     >
       <div>
-        <h1 className="flex text-5xl w-100 p-1 px-2 font-bold bg-gradient-to-r from-red-500 to-yellow-500 text-white"><RiFilmFill className="text-black p-1 mr-4 text-6xl -rotate-45 -backdrop-hue-rotate-30" />Filmoteca</h1>
+        <h1 className="flex text-5xl w-100 my-2 py-2 px-2 font-bold bg-gradient-to-r from-red-500 to-yellow-500 text-white"><RiFilmFill className="text-black p-1 mr-4 text-6xl -rotate-45 -backdrop-hue-rotate-30" />Filmoteca</h1>
        
 
         {/* COMPONENTE FILTROOOOOOOOOOOOOOO */}
-        {/* <AddFilm /> */}
+        <AddFilm />
 
 
 
@@ -55,7 +54,7 @@ export default function Films() {
 
 
           <div className="block justify-between">
-            <div className="card-title w-40 pt-3 text-center" >
+            <div className="card-title w-40 p-4 text-center" >
               <h2 className="w-full" >{film.name}</h2>{" "}
             </div>
           
@@ -69,7 +68,7 @@ export default function Films() {
             </Link>
             </div>
             <div className="grid w-full place-content-end p-2">
-            {film.favorite ? <button className="mt-16 mr-2 content-end badge bg-red-700 hover:scale-125"><MdFavorite/></button > : <button  className="mt-16 mr-2 content-end badge hover:scale-125"><MdFavorite/></button >}
+            {film.favorite ? <button className="mt-12 mr-2 content-end badge bg-red-700 hover:scale-125"><MdFavorite/></button > : <button  className="mt-12 mr-2 content-end badge hover:scale-125"><MdFavorite/></button >}
             </div>
 
 

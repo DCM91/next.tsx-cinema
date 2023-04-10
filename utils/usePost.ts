@@ -1,4 +1,4 @@
-import { Movie } from "@/typesApp";
+import { MoviePost } from "@/typesApp";
 import { useState } from "react";
 
 
@@ -7,12 +7,12 @@ interface UsePostParams {
   headers?: HeadersInit;
 }
 
-const usePost = ({ url, headers }: UsePostParams) => {
+export default function usePost ({ url, headers }: UsePostParams) {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | any | null>('');
-  const [data, setData] = useState<Movie | null>(null);
+  const [data, setData] = useState<MoviePost | null>(null);
 
-  const post = async (body: Movie) => {
+  const post = async (body: MoviePost) => {
     setLoading(true);
     try {
       const response = await fetch(url, {

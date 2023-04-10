@@ -10,6 +10,9 @@ function FilmDetails() {
   const router = useRouter();
   const { id } = router.query;
   const [film, setFilm] = useState<Movie>();
+  const baseUrl = process.env.NODE_ENV === "production"
+  ? `https://next-tsx-cinema.vercel.app/api/${id}`
+  : `http://localhost:3000/api/${id}`;
 
   useEffect(() => {
     if (id) {

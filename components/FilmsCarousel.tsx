@@ -5,7 +5,10 @@ import { Movie } from "@/typesApp";
 import Link from 'next/link';
 
 export default function LandingCarousel() {
-  const { data, loading, error } = useFetch('http://localhost:3000/api/all',);
+  const baseUrl = process.env.NODE_ENV === "production"
+  ? "https://next-tsx-cinema.vercel.app/api/all"
+  : "http://localhost:3000/api/all";
+  const { data, loading, error } = useFetch(baseUrl);
   const [slide, setSlide] = useState(1);
   const [numFilmsPerSlide, setNumFilmsPerSlide] = useState(5);
 

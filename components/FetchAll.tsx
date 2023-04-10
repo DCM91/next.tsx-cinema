@@ -14,7 +14,6 @@ export default function Films() {
   const baseUrl = process.env.NODE_ENV === "production"
   ? "https://next-tsx-cinema.vercel.app/api/all"
   : "http://localhost:3000/api/all";
-  
   const { data, loading, error } = useFetch(baseUrl);
 
   const films = data.allFilms;

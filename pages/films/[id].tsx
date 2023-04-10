@@ -16,7 +16,7 @@ function FilmDetails() {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:3000/api/${id}`)
+      fetch(baseUrl)
         .then((response) => response.json())
         .then((data) => setFilm(data))
         .catch((error) => console.log(error));

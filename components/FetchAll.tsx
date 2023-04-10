@@ -11,7 +11,7 @@ import AddFilm from "./AddFilm";
 
 
 export default function Films() {
-  const { data, loading, error } = useFetch("http://localhost:3000/api/all");
+  const { data, loading, error } = useFetch("http://localhost:3000/api/all" || "https://next-tsx-cinema.vercel.app/api/all");
   const films = data.allFilms;
   
   if (loading || data.length === 0) return <p>Loading...</p>;

@@ -23,7 +23,7 @@ export default function Films() {
 
   return (
     <div
-    className=""
+    className="py-3"
  
     >
       <div>
@@ -42,7 +42,7 @@ export default function Films() {
       {films.map((film: Movie) => (
         <div
           key={film.id}
-          className="card w-100 h-80 card-side m-1 mt-2  bg-gray-900 shadow-md glass "
+          className="card w-100 h-80 card-side m-3  bg-gray-900 shadow-md glass "
         >
           {" "}
   

@@ -28,19 +28,17 @@ function FilmDetails() {
   }
 
   return (
-    <div className="h-screen grid content-between">
+    <div style={{height:'100vh', display: 'flex', justifyContent:'space-between'}}>
       <Footer>
-        <div className="hero h-96 w-full flex " style={{}}>
-          <img src={film.image1} alt={film.name} className="h-96" />
+        <div className="hero h-fit py-6 w-full flex" style={{}}>
+          <img src={film.image1} alt={film.name} style={{width:'30%'}} className="h-96" />
 
-          <div className="hero-overlay bg-opacity-60 w-fit text-center text-neutral-content h-96 ">
-            <div className="h-96 flex flex-col">
-                <h1 className="mb-1 pt-3 text-5xl font-bold">{film.name}&nbsp;<span className="text-2xl">({film.year})</span></h1>
-                <div className="divider"></div> 
-                <p className="mx-5 text-left">{film.description}</p>
-                <div className="divider"></div> 
-                <p className="fixed left-72 bottom-44">{film.type === "film" ? "Película" : "Serie"}</p>
-                <Link href={"/"} className="fixed right-3 bottom-44"><button className="px-3 py-1 bg-orange-500 hover:bg-orange-600 text-white text-4xl  rounded-lg shadow-md ">
+          <div className="hero-overlay bg-opacity-60 grid  w-fit text-center text-neutral-content h-fit" style={{width:'70%'}}>
+            <div className="h-96 flex flex-col flex-wrap">
+                <h1 className="pt-2 text-5xl font-bold py-2">{film.name}&nbsp;<span className="text-2xl">({film.year})</span></h1>
+                <p className="mx-4 text-left h-44 pt-3 overflow-y-hidden">{film.description}</p>
+                <p className="static text-start px-3 pt-5">{film.type === "film" ? "Película" : "Serie"}</p>
+                <Link href={"/"} className="px-3 py-1 static text-end"><button className="px-3 bg-orange-500 hover:bg-orange-600 text-white text-4xl  rounded-lg shadow-md ">
                  <BsSkipBackwardBtn/>
                 </button></Link>
             </div>

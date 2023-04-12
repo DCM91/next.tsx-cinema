@@ -5,7 +5,7 @@ import { Movie } from "@/typesApp";
 import { RiFilmFill } from "react-icons/ri";
 import { MdFavorite } from "react-icons/md";
 import Link from "next/link";
-import AddFilm from "./AddFilm";
+import AddFile from "./AddFile";
 
 
 
@@ -31,7 +31,7 @@ export default function Films() {
        
 
         {/* COMPONENTE FILTROOOOOOOOOOOOOOO */}
-        <AddFilm />
+        <AddFile />
 
 
 

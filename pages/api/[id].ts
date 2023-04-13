@@ -23,10 +23,8 @@ export default function manejador(req: NextApiRequest, res: NextApiResponse) {
       if (id === "post"){
       newFilm.id = films[films.length - 1].id + 1;
       films.push(newFilm);
-      res.status(201).send({
-        allFilms: 'New Film',
-        newFilm,
-      })
+      res.status(201).redirect("/")
+      
     };
       break;
     case "PATCH":

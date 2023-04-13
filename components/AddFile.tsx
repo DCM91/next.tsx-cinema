@@ -35,27 +35,34 @@ export default function AddFile() {
                     >
                         <h3 className="font-bold text-2xl text-red-500 mb-4">Agrega una película o serie</h3>
 
-                        <form className='form-control'>
-                            <label><h3 className='text-orange-400'>Nombre</h3>
-                                <input type="text" placeholder="Spiderman2" className="input input-bordered input-warning w-full " />
+                        <form className='form-control'method="post" action="http://localhost:3000/api/post">
+
+                            <label htmlFor='name'><h3 className='text-orange-400'>Nombre</h3>
+                                <input type="text" id="name" name="name" placeholder="Spiderman2" className="input input-bordered input-warning w-full " />
                             </label>
-                            <label><h3 className='text-orange-400'>Año</h3>
-                                <input type="text" placeholder="2002" className="input input-bordered input-warning w-full " />
+
+                            <label htmlFor='year'><h3 className='text-orange-400'>Año</h3>
+                                <input type="text" id="year" name="year" placeholder="2002" className="input input-bordered input-warning w-full " />
                             </label>
+
                             <label><h3 className='text-orange-400'>Descripción</h3>
-                                <textarea className="textarea textarea-warning textarea-lg w-full" placeholder="Empieza tu descripción"></textarea>
+                                <textarea name="description" className="textarea textarea-warning textarea-lg w-full" placeholder="Empieza tu descripción"></textarea>
                            </label>
-                            <label htmlFor="image" className="block text-lg font-medium text-white mb-2">
+
+                            <label htmlFor="image" className="block text-lg font-medium text-orange-400">
                             URL de la imagen
-                                <input type="url" className="input input-success text-black w-full"/>
+                                <input type="url" name="image1" className="input input-success text-black w-full"/>
                             </label>
-                            <label>
+
+                            <label htmlFor='type'>
                                 <span className='text-orange-400'>Película</span>
-                                <input type="radio" name="radio-6" className="radio radio-warning" checked />
+                                <input type="radio" name="type" id="film" value="film"  className="radio radio-warning" checked />
                                 <br/>
                                 <span className='text-orange-400'>Serie</span>
-                                <input type="radio" name="radio-6" className="radio radio-warning" />
+                                <input type="radio" name="type" id="series" value="serie" className="radio radio-warning" />
                             </label>
+
+
                             <button type="submit" className="btn bg-orange-500 hover:bg-orange-600">
                                 Agregar
                             </button>

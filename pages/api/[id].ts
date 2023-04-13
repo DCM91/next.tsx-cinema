@@ -22,6 +22,7 @@ export default function manejador(req: NextApiRequest, res: NextApiResponse) {
       const newFilm = req.body;
       if (id === "post"){
       newFilm.id = films[films.length - 1].id + 1;
+      newFilm.favorite = false;
       films.push(newFilm);
       res.status(201).redirect("/")
       

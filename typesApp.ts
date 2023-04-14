@@ -6,7 +6,6 @@ export interface Movie {
     name: string;
     image1: string;
     year: string;
-    price?: number;
     description: string;
     favorite: boolean;
   }

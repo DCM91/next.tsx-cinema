@@ -38,8 +38,9 @@ export default function manejador(req: NextApiRequest, res: NextApiResponse) {
             ...req.body
           };
           films[index] = updatedFilm;
-          res.status(200).json({ message: "Film updated", film: updatedFilm });
-          res.redirect("/");          
+          res.status(200).json(updatedFilm)
+          window.location.reload();
+
         }
         break;
     case 'DELETE':

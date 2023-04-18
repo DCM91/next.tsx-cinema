@@ -18,7 +18,7 @@ export default function Films() {
 
   const films = data.allFilms;
 
-  const toggleFavorite = async (id: any) => {
+  const toggleFavorite = async (id: number) => {
     try {
       const res = await fetch(`/api/${id}`, {
         method: "PATCH",

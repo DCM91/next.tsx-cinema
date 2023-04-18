@@ -17,29 +17,26 @@ export default function Films() {
   const { data, loading, error } = useFetch(baseUrl);
 
   const films = data.allFilms;
-  const [favorite, setFavorite] = useState(false);
+
+  const toggleFavorite = async (id: any) => {
+    try {
+      const res = await fetch(`/api/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   
   if (loading || data.length === 0) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
+  
 
-  const handleFavorite = (id: number, favorite: boolean) => {
-    const url =
-      process.env.NODE_ENV === "production"
-        ? `https://next-tsx-cinema.vercel.app/api/${id}`
-        : `http://localhost:3000/api/${id}`;
-
-    fetch(url, {
-      method: "PATCH",
-
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setFavorite(data.favorite);
-      })
-      .catch((error) => console.log(error));
-  };
 
   return (
     <div
@@ -92,7 +89,7 @@ export default function Films() {
             </Link>
             </div>
             <div className="grid w-full place-content-end p-2">
-            {film.favorite ? <button onClick={() => handleFavorite(film.id, false)} className="mt-12 mr-2 content-end badge bg-red-700 hover:scale-125"><MdFavorite/></button > : <button  className="mt-12 mr-2 content-end badge hover:scale-125" onClick={() => handleFavorite(film.id, true)}><MdFavorite/></button >}
+            {film.favorite ? <button onClick={() => toggleFavorite(film.id)} className="mt-12 mr-2 content-end badge bg-red-700 hover:scale-125"><MdFavorite/></button > : <button onClick={() => toggleFavorite(film.id)}  className="mt-12 mr-2 content-end badge hover:scale-125" ><MdFavorite/></button >}
             </div>
 
 

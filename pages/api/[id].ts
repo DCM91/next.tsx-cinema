@@ -28,19 +28,20 @@ export default function manejador(req: NextApiRequest, res: NextApiResponse) {
       
     };
       break;
-    case "PATCH":
-      if (index === -1) {
-        return res.status(404).send("Not found");
-      } else {
-        films[index] = {
-          ...films[index],
-          ...req.body,
-        };
-        const updatedFilm = films[index];
-        return res.status(200).send({message: "Film updated", film: updatedFilm });
-      }
-      break;
-
+      case "PATCH":
+        if (index === -1) {
+          return res.status(404).json("Not found");
+        } else {
+          const updatedFilm = { 
+            ...films[index],
+            favorite: !films[index].favorite,
+            ...req.body
+          };
+          films[index] = updatedFilm;
+          res.status(200).json({ message: "Film updated", film: updatedFilm });
+          res.redirect("/");          
+        }
+        break;
     case 'DELETE':
       if (index !== -1) {
         films.splice(index, 1);

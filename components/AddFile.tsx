@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 
 export default function AddFile() {
+      const baseUrl = process.env.NODE_ENV === "production"
+  ? "https://next-tsx-cinema.vercel.app/api/post"
+  : "http://localhost:3000/api/post";
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -35,7 +38,7 @@ export default function AddFile() {
                     >
                         <h3 className="font-bold text-2xl text-red-500 mb-4">Agrega una película o serie</h3>
 
-                        <form className='form-control'method="post" action="http://localhost:3000/api/post">
+                        <form className='form-control'method="post" action={baseUrl}>
 
                             <label htmlFor='name'><h3 className='text-orange-400'>Nombre</h3>
                                 <input type="text" id="name" name="name" placeholder="Spiderman2" className="input input-bordered input-warning w-full " />

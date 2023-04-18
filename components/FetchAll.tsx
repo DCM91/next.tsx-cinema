@@ -27,6 +27,7 @@ export default function Films() {
         },
       });
       const data = await res.json();
+      location.reload()
     } catch (error) {
       console.error(error);
     }

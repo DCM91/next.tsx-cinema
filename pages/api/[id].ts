@@ -39,7 +39,6 @@ export default function manejador(req: NextApiRequest, res: NextApiResponse) {
           };
           films[index] = updatedFilm;
           res.status(200).json(updatedFilm)
-          window.location.reload();
 
         }
         break;

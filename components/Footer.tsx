@@ -10,7 +10,7 @@ interface LayoutProps {
 
 export const Footer = ({title = "TypedNextCinema" , children}: LayoutProps) => {
   return (
-    <div className='flex flex-col h-fit w-full'>
+    <div className='flex flex-col h-full w-full'>
       <Head>
         <title>{title}</title>
         <meta name="description" content="TypedNextCinema app" />

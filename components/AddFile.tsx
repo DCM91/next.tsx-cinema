@@ -5,6 +5,25 @@ export default function AddFile() {
   ? "https://next-tsx-cinema.vercel.app/api/post"
   : "http://localhost:3000/api/post";
     const [isOpen, setIsOpen] = useState(false);
+    const [formSubmitted, setFormSubmitted] = useState(false);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        fetch(baseUrl, {
+            method: 'POST',
+            body: new FormData(event.target)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            setFormSubmitted(true);
+        })
+        .catch(error => console.error(error));
+    }
+
+    if (formSubmitted) {
+        window.location.reload();
+    }
 
     return (
         <>
@@ -38,7 +57,7 @@ export default function AddFile() {
                     >
                         <h3 className="font-bold text-2xl text-red-500 mb-4">Agrega una película o serie</h3>
 
-                        <form className='form-control'method="post" action={baseUrl}>
+                        <form className='form-control' method="post" action={baseUrl}>
 
                             <label htmlFor='name'><h3 className='text-orange-400'>Nombre</h3>
                                 <input type="text" id="name" name="name" placeholder="Spiderman2" className="input input-bordered input-warning w-full " />
@@ -57,11 +76,11 @@ export default function AddFile() {
                                 <input type="url" name="image1" className="input input-success text-black w-full"/>
                             </label>
 
-                            <label htmlFor='type'>
+                            <label htmlFor='type' className='flex m-3'>
                                 <span className='text-orange-400'>Película</span>
                                 <input type="radio" name="type" id="film" value="film"  className="radio radio-warning" checked />
                                 <br/>
-                                <span className='text-orange-400'>Serie</span>
+                                <span className='text-orange-400 pl-5'>Serie</span>
                                 <input type="radio" name="type" id="series" value="serie" className="radio radio-warning" />
                             </label>
 

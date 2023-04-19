@@ -28,12 +28,12 @@ function FilmDetails() {
   }
 
   return (
-    <div style={{height:'100vh', display: 'flex', justifyContent:'space-between'}}>
+    <div style={{height:'100%', display: 'flex', justifyContent:'space-between', background: "#1C1C1C" }}>
       <Footer>
-        <div className="hero h-fit py-6 w-full flex" style={{}}>
-          <img src={film.image1} alt={film.name} style={{width:'30%'}} className="h-96" />
+        <div className="hero h-fit py-6 w-full flex flex-wrap" style={{}}>
+          <img src={film.image1} alt={film.name} className="h-96 w-1/3" />
 
-          <div className="hero-overlay bg-opacity-60 grid  w-fit text-center text-neutral-content h-fit" style={{width:'70%'}}>
+          <div className="hero-overlay bg-opacity-60 grid  w-2/3 text-center text-neutral-content h-fit">
             <div className="h-96 flex flex-col flex-wrap">
                 <h1 className="pt-2 text-5xl font-bold py-2">{film.name}&nbsp;<span className="text-2xl">({film.year})</span></h1>
                 <p className="mx-4 text-left h-44 pt-3 overflow-y-hidden">{film.description}</p>
